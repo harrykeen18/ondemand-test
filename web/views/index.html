@@ -18,23 +18,33 @@
 </head>
 <body>
   <div class="container">
-    <div class="row">
-      <div class="col-md-5 col-md-offset-2">
-        <h1>Opendesk on demand</h1>
+    <div class="row" style="margin-top:20px;">
+      <div class="col-md-6 col-md-offset-3" style="background-color:#F1F1F1;">
+        <h1 style="text-align:center;">Opendesk On Demand</h1>
+        <div class="row">
+          <a href="https://www.opendesk.cc/lean/desk">
+            <div style="text-align: center;">
+              <img src="https://d2mgbjyendvdw0.cloudfront.net/09209/1196/lean-desk_index_angled-view_ply_2880x1620.lead.jpg" style="width:80%;">
+            </div>
+          </a>
+        </div>
         <form id="add-post" class="cf">
-        <div style="margin-top:40px;" >
+          <div style="margin-top:40px;" >
+          <label for="length_fader">Length</label>
+          <input type="range" min="1000" max="2400" value="1700" id="length_fader" step="1" oninput="outputUpdate2(value)">
+          <output for="length_fader" id="length">2400 mm</output>
+        </div>
+        <div style="margin-top:30px;" >
           <label for="thickness_fader">Thickness</label>
           <input type="range" min="16" max="20" value="18" id="thickness_fader" step="0.1" oninput="outputUpdate(value)">
           <output for="thickness_fader" id="thickness">18 mm</output>
         </div>
-        <div style="margin-top:10px;" >
-          <label for="length_fader">Length</label>
-          <input type="range" min="1500" max="2400" value="2400" id="length_fader" step="1" oninput="outputUpdate2(value)">
-          <output for="length_fader" id="length">2400 mm</output>
-        </div>
         <div class="row">
-          <div style="margin-top:10px;" class="col-md-offset-4 col-md-6">
-            <button type="submit" class="btn">Generate files</button>
+          <div style="margin-top:10px;
+                      margin-bottom:15px;
+                      width:100%;"
+                      class="col-md-offset- col-md-6">
+            <button type="submit" class="btn" style="width:100%;background-color:#F3FFFA;border-radius: 0px">Generate files</button>
           </div>
         </div>
         </form>
