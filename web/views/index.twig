@@ -4,9 +4,41 @@
   <container>
     <div class="row">
       <div class="col-md-12">
-        <p> Hello world </p>
+        <form id="add-post" class="cf">
+          <label>
+          What are your measures
+          </label>
+          <textarea placeholder="Enter your message"></textarea>
+          <button>Add task</button>
+        </form>
+
       </div>
     </div>
-  </container
+  </container>
+  <script>
+  $(document).ready(function () {
+
+  var form = $('#add-post');
+  form.find('button').click(function (e) {
+    e.preventDefault();
+    $.ajax({
+      url: '/action',
+      type: 'post',
+      contentType: 'application/json',
+      data: JSON.stringify({
+        text: form.find('textarea').val(),
+        now: Date.now()
+      }),
+      success: function () {
+        _getList();
+      },
+      error: function () {
+        alert('failed add post')
+      }
+
+    });
+  });
+
+</script>
 
 {% endblock %}
